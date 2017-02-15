@@ -9,7 +9,7 @@ from labjack import ljm
 """
 ANY = "ANY"
 CT = ["USB", "ETHERNET", "WIFI", "TCP"]
-DEVICE = "T7"
+T7_DEVICE = "T7"
 
 """
     Global constants used while connecting to specific device
@@ -27,9 +27,15 @@ SN_INDEX = 3
 def ld_connect(dt, ct):
     """
     function used to detect LabJack device(s) using specific protocol(s)
-    :param dt: device type DEVICE and ANY allowed
-    :param ct: connection type CT values and ANY allowed
-    :return: list of connection to devices
+    dt: device type DEVICE and ANY allowed
+    ct: connection type CT values and ANY allowed
+    return: list of connection to devices
+    >>> dev = ld_connect(ANY, ANY)   #it will connect to any labjack devices using any protocols
+    >>> dev = ld_connect(DEVICE_T7, CT[3]) #it will connect to labjack t7 devices using tcp protocols
+    >>> dev = ld_connect(DEVICE_T7, ANY)   #it will connect to labjack t7 devices using any protocols
+    >>> dev = ld_connect(DEVICE_T7, CT[2])   #it will connect to labjack t7 devices using only wifi
+    >>> dev = ld_connect(DEVICE_T7, CT[1])   #it will connect to labjack t7 devices using only ethernet
+    >>> dev = ld_connect(DEVICE_T7, CT[0])   #it will connect to labjack t7 devices using only usb
     """
     handle = []
     labjack_devices = ljm.listAllS(dt, ct)
