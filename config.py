@@ -1,19 +1,19 @@
 __author__ = 'Frederick NEY'
 from labjack import ljm
-import LabjackT7Lib as kernel
+import LabjackT7Lib as Kernel
 
 
 def ld_dio_update_config(handle, dio_dir, dio_state):
-    fio_state_register = ljm.eReadAddress(handle, kernel.T7_FIO_STATE, kernel.T7_FIO_STATE_T)
-    fio_dir_register = ljm.eReadAddress(handle, kernel.T7_FIO_DIR, kernel.T7_FIO_DIR_T)
-    ljm.eWriteAddress(handle, kernel.T7_FIO_DIR, kernel.T7_FIO_DIR_T, fio_dir_register | dio_dir)
-    ljm.eWriteAddress(handle, kernel.T7_FIO_STATE, kernel.T7_FIO_STATE_T, fio_state_register | dio_state)
+    fio_state_register = ljm.eReadAddress(handle, Kernel.T7_FIO_STATE, Kernel.T7_FIO_STATE_T)
+    fio_dir_register = ljm.eReadAddress(handle, Kernel.T7_FIO_DIR, Kernel.T7_FIO_DIR_T)
+    ljm.eWriteAddress(handle, Kernel.T7_FIO_DIR, Kernel.T7_FIO_DIR_T, fio_dir_register | dio_dir)
+    ljm.eWriteAddress(handle, Kernel.T7_FIO_STATE, Kernel.T7_FIO_STATE_T, fio_state_register | dio_state)
     return
 
 
 def ld_dio_erase_config(handle, dio_dir, dio_state):
-    ljm.eWriteAddress(handle, kernel.T7_FIO_DIR, kernel.T7_FIO_DIR_T, dio_dir)
-    ljm.eWriteAddress(handle, kernel.T7_FIO_STATE, kernel.T7_FIO_STATE_T, dio_state)
+    ljm.eWriteAddress(handle, Kernel.T7_FIO_DIR, Kernel.T7_FIO_DIR_T, dio_dir)
+    ljm.eWriteAddress(handle, Kernel.T7_FIO_STATE, Kernel.T7_FIO_STATE_T, dio_state)
     return
 
 
@@ -27,46 +27,46 @@ def ld_aio_erase_config(handle, mode):
 
 def ld_aio_update_resolution_config(handle, resolutions):
     ain_addrs = [
-        kernel.T7_AIN0_RANGE,
-        kernel.T7_AIN1_RANGE,
-        kernel.T7_AIN2_RANGE,
-        kernel.T7_AIN3_RANGE,
-        kernel.T7_AIN4_RANGE,
-        kernel.T7_AIN5_RANGE,
-        kernel.T7_AIN6_RANGE,
-        kernel.T7_AIN7_RANGE,
-        kernel.T7_AIN8_RANGE,
-        kernel.T7_AIN9_RANGE,
-        kernel.T7_AIN10_RANGE,
-        kernel.T7_AIN11_RANGE,
-        kernel.T7_AIN12_RANGE,
-        kernel.T7_AIN13_RANGE,
+        Kernel.T7_AIN0_RANGE,
+        Kernel.T7_AIN1_RANGE,
+        Kernel.T7_AIN2_RANGE,
+        Kernel.T7_AIN3_RANGE,
+        Kernel.T7_AIN4_RANGE,
+        Kernel.T7_AIN5_RANGE,
+        Kernel.T7_AIN6_RANGE,
+        Kernel.T7_AIN7_RANGE,
+        Kernel.T7_AIN8_RANGE,
+        Kernel.T7_AIN9_RANGE,
+        Kernel.T7_AIN10_RANGE,
+        Kernel.T7_AIN11_RANGE,
+        Kernel.T7_AIN12_RANGE,
+        Kernel.T7_AIN13_RANGE,
     ]
     for resolution, ain_addr in zip(resolutions, ain_addrs):
         if resolution != 0:
-            ljm.eWriteAddress(handle, ain_addr, kernel.T7_AIN_RANGE_T, resolution)
+            ljm.eWriteAddress(handle, ain_addr, Kernel.T7_AIN_RANGE_T, resolution)
     return
 
 
 def ld_aio_erase_resolution_config(handle, resolutions):
     ain_addrs = [
-        kernel.T7_AIN0_RANGE,
-        kernel.T7_AIN1_RANGE,
-        kernel.T7_AIN2_RANGE,
-        kernel.T7_AIN3_RANGE,
-        kernel.T7_AIN4_RANGE,
-        kernel.T7_AIN5_RANGE,
-        kernel.T7_AIN6_RANGE,
-        kernel.T7_AIN7_RANGE,
-        kernel.T7_AIN8_RANGE,
-        kernel.T7_AIN9_RANGE,
-        kernel.T7_AIN10_RANGE,
-        kernel.T7_AIN11_RANGE,
-        kernel.T7_AIN12_RANGE,
-        kernel.T7_AIN13_RANGE,
+        Kernel.T7_AIN0_RANGE,
+        Kernel.T7_AIN1_RANGE,
+        Kernel.T7_AIN2_RANGE,
+        Kernel.T7_AIN3_RANGE,
+        Kernel.T7_AIN4_RANGE,
+        Kernel.T7_AIN5_RANGE,
+        Kernel.T7_AIN6_RANGE,
+        Kernel.T7_AIN7_RANGE,
+        Kernel.T7_AIN8_RANGE,
+        Kernel.T7_AIN9_RANGE,
+        Kernel.T7_AIN10_RANGE,
+        Kernel.T7_AIN11_RANGE,
+        Kernel.T7_AIN12_RANGE,
+        Kernel.T7_AIN13_RANGE,
     ]
     for resolution, ain_addr in zip(resolutions, ain_addrs):
-        ljm.eWriteAddress(handle, ain_addr, kernel.T7_AIN_RANGE_T, resolution)
+        ljm.eWriteAddress(handle, ain_addr, Kernel.T7_AIN_RANGE_T, resolution)
     return
 
 
