@@ -5,6 +5,8 @@ from labjack.ljm import constants
     Analog input data type
 """
 
+UINT64 = 100
+
 T7_AIN_T = constants.FLOAT32
 
 """
@@ -5259,11 +5261,11 @@ T7_HW_INST_T = constants.UINT32
 
 T7_HW_INST = 0xea6a
 
-T7_ETH_MAC_ADDR_T = constants.UINT64
+T7_ETH_MAC_ADDR_T = UINT64
 
 T7_ETH_MAC_ADDR = 0xea74
 
-T7_WLAN_MAC_ADDR_T = constants.UINT64
+T7_WLAN_MAC_ADDR_T = UINT64
 
 T7_WLAN_MAC_ADDR = 0xea78
 
