@@ -32,8 +32,7 @@ class MonitorEsc(threading.Thread):
 
     def __getch__(self):
         """
-
-        return: keypressed
+        return: key pressed
         """
         # POSIX system. Create and return a getch that manipulates the tty.
         fd = sys.stdin.fileno()
