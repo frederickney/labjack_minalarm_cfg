@@ -29,7 +29,8 @@ def ld_connect(dt, ct):
     function used to detect LabJack device(s) using specific protocol(s)
     dt: device type DEVICE and ANY allowed
     ct: connection type CT values and ANY allowed
-    return: list of connection to devices
+    return: list of connection to devices and list of connection information in case of loosing connection for
+            trying to restore the connection to de device
     >>> dev = ld_connect(ANY, ANY)   #it will connect to any labjack devices using any protocols
     >>> dev = ld_connect(DEVICE_T7, CT[3]) #it will connect to labjack t7 devices using tcp protocols
     >>> dev = ld_connect(DEVICE_T7, ANY)   #it will connect to labjack t7 devices using any protocols
@@ -37,14 +38,34 @@ def ld_connect(dt, ct):
     >>> dev = ld_connect(DEVICE_T7, CT[1])   #it will connect to labjack t7 devices using only ethernet
     >>> dev = ld_connect(DEVICE_T7, CT[0])   #it will connect to labjack t7 devices using only usb
     """
+    connection_info = []
     handle = []
     labjack_devices = ljm.listAllS(dt, ct)
     for index in range(labjack_devices[CD_INDEX]):
-        handle.append(
-            ljm.open(
-                labjack_devices[DT_INDEX][index],
-                labjack_devices[CT_INDEX][index],
-                labjack_devices[SN_INDEX][index]
+        try:
+            handle.append(
+                ljm.open(
+                    labjack_devices[DT_INDEX][index],
+                    labjack_devices[CT_INDEX][index],
+                    labjack_devices[SN_INDEX][index]
+                )
             )
-        )
-    return handle
+            connection_info.append(
+                [
+                    labjack_devices[DT_INDEX][index],
+                    labjack_devices[CT_INDEX][index],
+                    labjack_devices[SN_INDEX][index]
+                ]
+            )
+        except ljm.ljm.LJMError as LjmError:
+            print(
+                LjmError._errorString + ": Unable to connect to device " + str(
+                    [
+                        labjack_devices[DT_INDEX][index],
+                        labjack_devices[CT_INDEX][index],
+                        labjack_devices[SN_INDEX][index]
+                    ]
+                )
+            )
+
+    return handle, connection_info
