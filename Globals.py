@@ -1,8 +1,8 @@
 __author__ = 'Frederick NEY'
 import threading
+import signal
 
 
 def init():
-    global exiting, lock
+    global exiting
     exiting = False
-    lock = threading.Lock()

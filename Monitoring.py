@@ -1,20 +1,16 @@
+import sys
+
 __author__ = 'Frederick NEY'
 from labjack import ljm
 import LabjackT7Lib as Kernel
 from KeyboardManager import *
 
-
-def monitor_dio_ain(handle):
-    Globals.init()
-    thread = MonitorEsc()
-    thread.start()
-    Globals.lock.acquire()
+def monitor_dio_ain(handles):
     while not Globals.exiting:
-        Globals.lock.release()
         """
         #TODO wait timer
         #TODO read register
         #TODO print register content
         """
-        Globals.lock.acquire()
     return
+
