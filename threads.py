@@ -25,10 +25,14 @@ class Thread(threading.Thread):
                 if handle > 0:
                     Globals.handles.append(handle)
                     Globals.information.append(self.connection_info)
-                    print("\tDevice " + str(self.connection_info) + " successfully reconnected\n")
+                    print("\nDevice " + str(self.connection_info) + " successfully reconnected.\n")
                     return 0
             except ljm.ljm.LJMError as LjmError:
                 self.error = LjmError._errorString
             time.sleep(self.second)
-            print("\tUnable to reconnect to device " + str(self.connection_info) + ". Removed permanently\n")
+        print(
+            "\nUnable to reconnect to device " + str(self.connection_info)
+            + " Error: " + LjmError._errorString
+            + ". Removed permanently\n"
+        )
         return -1
