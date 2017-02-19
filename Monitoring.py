@@ -41,7 +41,5 @@ def monitor_dio_ain(handles, information, display_sec=1, conn_attempt=5, conn_tr
     for thread in threads:
         if thread.is_alive():
             thread.exit(0)
-    for handle in Globals.handles:
-        ljm.close(handle)
     return
 

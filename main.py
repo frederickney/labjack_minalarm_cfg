@@ -29,6 +29,10 @@ def main():
         if 0 == ld_ain_config(handles, ain_addr, aio_dir=1, ain_range=ain_range):
             # TODO configure digital and analog I/O
             monitor_dio_ain(handles, information)
+            print("Closing connection to devices")
+            for handle in Globals.handles:
+                ljm.close(handle)
+            print("Connections closed")
     else:
         print("\tUnable to detect any devices")
     signal.signal(signal.SIGINT, signal.SIG_DFL)
