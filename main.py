@@ -28,13 +28,13 @@ def main():
         # TODO run Monitoring
     else:
         print("\tUnable to detect any devices")
-        print("Exiting")
-        signal.signal(signal.SIGINT, signal.SIG_DFL)
-        signal.signal(signal.SIGTERM, signal.SIG_DFL)
-        signal.signal(signal.SIGQUIT, signal.SIG_DFL)
-        signal.signal(signal.SIGTSTP, signal.SIG_DFL)
-        signal.signal(signal.SIGHUP, signal.SIG_DFL)
-        signal.signal(signal.SIGABRT, signal.SIG_DFL)
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+    signal.signal(signal.SIGTERM, signal.SIG_DFL)
+    signal.signal(signal.SIGQUIT, signal.SIG_DFL)
+    signal.signal(signal.SIGTSTP, signal.SIG_DFL)
+    signal.signal(signal.SIGHUP, signal.SIG_DFL)
+    signal.signal(signal.SIGABRT, signal.SIG_DFL)
+    print("Exiting")
     return
 
 if __name__ == "__main__":
