@@ -33,7 +33,7 @@ AIN_ADDRS = [
     Kernel.T7_AIN68_RANGE, Kernel.T7_AIN69_RANGE, Kernel.T7_AIN70_RANGE, Kernel.T7_AIN71_RANGE,
     Kernel.T7_AIN72_RANGE, Kernel.T7_AIN73_RANGE, Kernel.T7_AIN74_RANGE, Kernel.T7_AIN75_RANGE,
     Kernel.T7_AIN76_RANGE, Kernel.T7_AIN77_RANGE, Kernel.T7_AIN78_RANGE, Kernel.T7_AIN79_RANGE,
-    Kernel.T7_AIN80_RANGE, Kernel.T7_AIN81_RANGE, Kernel.T7_AIN82_RANGE,Kernel.T7_AIN83_RANGE,
+    Kernel.T7_AIN80_RANGE, Kernel.T7_AIN81_RANGE, Kernel.T7_AIN82_RANGE, Kernel.T7_AIN83_RANGE,
     Kernel.T7_AIN84_RANGE, Kernel.T7_AIN85_RANGE, Kernel.T7_AIN86_RANGE, Kernel.T7_AIN87_RANGE,
     Kernel.T7_AIN88_RANGE, Kernel.T7_AIN89_RANGE, Kernel.T7_AIN90_RANGE, Kernel.T7_AIN91_RANGE,
     Kernel.T7_AIN92_RANGE, Kernel.T7_AIN93_RANGE, Kernel.T7_AIN94_RANGE, Kernel.T7_AIN95_RANGE,
@@ -167,7 +167,7 @@ def ld_dac_alter_config(handle, dac_addr, value_list):
     return 0
 
 
-def ld_aio_alter_range_config(handle, range_list, addr_list):
+def ld_aio_alter_range_config(handle, addr_list, range_list):
     """
         function to update range(s) of analog input
     :param handle:
@@ -253,18 +253,26 @@ def ld_ain_config(handles, analog_addr, aio_dir=0, ain_range=None, dac_values=No
     :return:
     """
     if 1 == aio_dir:
+        print("\tConfiguring analog input")
         if handles is not None and analog_addr is not None and ain_range is not None:
             for handle in handles:
-                ld_aio_alter_range_config(handle, analog_addr, ain_range)
+                if 0 > ld_aio_alter_range_config(handle, analog_addr, ain_range):
+                    print("Error occurred during configuration of device " + str(ljm.getHandleInfo(handle)))
+                    return -1
         else:
             print("ERROR: Leaving analog input to current labjack configuration")
+            return -1
     elif 0 == aio_dir:
+        print("\tConfiguring analog output")
         if handles is not None and analog_addr is not None and dac_values is not None:
             for handle in handles:
-                ld_dac_alter_config(handle, analog_addr, dac_values)
+                if 0 > ld_dac_alter_config(handle, analog_addr, dac_values):
+                    print("Error occurred during configuration of device " + str(ljm.getHandleInfo(handle)))
+                    return -1
         else:
             print("ERROR: Leaving analog output to current labjack configuration")
-    return
+            return -1
+    return 0
 
 
 """
@@ -341,7 +349,7 @@ def ain_addr_validator(addr_list, display=0):
         Kernel.T7_AIN248_RANGE, Kernel.T7_AIN249_RANGE, Kernel.T7_AIN250_RANGE, Kernel.T7_AIN251_RANGE,
         Kernel.T7_AIN252_RANGE, Kernel.T7_AIN253_RANGE, Kernel.T7_AIN254_RANGE
     ]
-    if isinstance(type(addr_list), type([])):
+    if type(addr_list) == type([]):
         if 0 != len(addr_list):
             for addr in addr_list:
                 try:
@@ -371,8 +379,8 @@ def range_validator(ranges, display=0):
     range_list = [
         10, 1, 10.0, 1.0, 0.1, 0.01
     ]
-    if isinstance(type(range), type([])):
-        if 0 != len(range):
+    if type(ranges) == type([]):
+        if 0 != len(ranges):
             for range_v in ranges:
                 try:
                     test = range_list.index(range_v)
@@ -420,7 +428,7 @@ def dac_addr_validator(addr_list, display=0):
     dac_addr = [
         Kernel.T7_DAC0, Kernel.T7_DAC1
     ]
-    if isinstance(type(addr_list), type([])):
+    if type(addr_list) == type([]):
         if 0 != len(addr_list):
             for addr in addr_list:
                 try:
@@ -447,7 +455,7 @@ def dac_addr_validator(addr_list, display=0):
 
 
 def dac_output_voltage_validator(values_list, display=0):
-    if isinstance(type(values_list), type([])):
+    if type(values_list) == type([]):
         if 0 != len(values_list):
             for value in values_list:
                 if (not isinstance(values_list, int)) and (not isinstance(values_list, float)):

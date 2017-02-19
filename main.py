@@ -23,9 +23,12 @@ def main():
     print("\tConnecting to devices")
     handles, information = ld_connect(T7_DEVICE, CT[3])
     if len(handles) != 0:
-        print("\tFound " + len(handles) + "device(s)")
-        # TODO configure digital and analog I/O
-        monitor_dio_ain(handles, information)
+        print("\tFound " + str(len(handles)) + " device(s)")
+        ain_addr = [AIN_ADDRS[0], AIN_ADDRS[1]]
+        ain_range = 10.0
+        if 0 == ld_ain_config(handles, ain_addr, aio_dir=1, ain_range=ain_range):
+            # TODO configure digital and analog I/O
+            monitor_dio_ain(handles, information)
     else:
         print("\tUnable to detect any devices")
     signal.signal(signal.SIGINT, signal.SIG_DFL)
