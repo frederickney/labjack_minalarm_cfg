@@ -24,8 +24,10 @@ def monitor_dio_ain(handles, information, display_sec=1, conn_attempt=5, conn_tr
         for handle in Globals.handles:
             try:
                 print("getting information")
-                # TODO read register
-                # TODO print register content
+                print("AIN0: " + str(ljm.eReadAddress(handle, Kernel.T7_AIN0, Kernel.T7_AIN_T)))
+                print("AIN1: " + str(ljm.eReadAddress(handle, Kernel.T7_AIN1, Kernel.T7_AIN_T)))
+                print("FIO0: " + str(ljm.eReadAddress(handle, Kernel.T7_FIO0, Kernel.T7_FIO_T)))
+                print("FIO1: " + str(ljm.eReadAddress(handle, Kernel.T7_FIO1, Kernel.T7_FIO_T)))
             except ljm.ljm.LJMError:
                 index = Globals.handles.index(handle)
                 info = Globals.information[index]
