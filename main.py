@@ -25,7 +25,7 @@ def main():
     if len(handles) != 0:
         print("\tFound " + len(handles) + "device(s)")
         # TODO configure digital and analog I/O
-        # TODO run Monitoring
+        monitor_dio_ain(handles, information)
     else:
         print("\tUnable to detect any devices")
     signal.signal(signal.SIGINT, signal.SIG_DFL)
