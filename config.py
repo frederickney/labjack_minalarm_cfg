@@ -224,7 +224,7 @@ def ld_aio_alter_range_config(handle, addr_list, range_list):
 """
 
 
-def ld_dio_config(handles, dio_dir=0x00, dio_state=0, update_dio=0):
+def ld_dio_config(handles, dio_dir=None, dio_state=None, update_dio=0):
     """
 
     :param handles:
@@ -233,13 +233,27 @@ def ld_dio_config(handles, dio_dir=0x00, dio_state=0, update_dio=0):
     :param update_dio:
     :return:
     """
-    if dio_dir != 0x00 or dio_state != 0:
+    if dio_dir is not None and dio_state is not None:
+        if dio_dir > 255:
+            dio_dir = 255
+        if dio_state > 255:
+            dio_state = 255
+        if dio_state - dio_dir > dio_state:
+            dio_state = dio_state - dio_dir
         for handle in handles:
             if 1 == update_dio:
-                ld_dio_update_config(handle, dio_dir, dio_state)
+                try:
+                    ld_dio_update_config(handle, dio_dir, dio_state)
+                except ljm.ljm.LJMError:
+                    print("Unable to update config for device " + str(ljm.getHandleInfo(handles)))
+                    return -1
             else:
-                ld_dio_erase_config(handle, dio_dir, dio_state)
-    return
+                try:
+                    ld_dio_erase_config(handle, dio_dir, dio_state)
+                except ljm.ljm.LJMError:
+                    print("Unable to erase config for device " + str(ljm.getHandleInfo(handles)))
+                    return -1
+    return 0
 
 
 def ld_ain_config(handles, analog_addr, aio_dir=0, ain_range=None, dac_values=None):
