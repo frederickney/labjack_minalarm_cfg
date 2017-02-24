@@ -13,11 +13,11 @@ DAC_ADDRS = [
 ]
 
 RES_LIST = [
-    "auto", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 ]
 
 SETTLING_LIST = [
-
+    10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000
 ]
 
 RES_ADDR = [
@@ -973,6 +973,7 @@ def dac_output_voltage_validator(values_list, display=0):
 
 def settling_time_validator(settling_list, display=0):
     settling_allowed = [
+        10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000
     ]
     if type(settling_list) == type([]):
         if 0 != len(settling_list):
