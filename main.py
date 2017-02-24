@@ -31,7 +31,7 @@ def main():
         ain_range = 1
         ain_config = ld_ain_config(handles, ain_addr, aio_dir=1, ain_range=ain_range)
         dio_conf = ld_dio_config(handles, 0, 0, 1)
-        settling_conf = ld_settling_config(handles, settling_addr, SETTLING_LIST[11])
+        settling_conf = ld_settling_config(handles, settling_addr, SETTLING_LIST[0])
         resolution_config = ld_resolution_config(handles, resolution_addr, RES_LIST[12])
         Globals.add_global_handles(handles)
         Globals.add_global_information(information)
