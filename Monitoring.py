@@ -16,8 +16,6 @@ def monitor_dio_ain(handles, information, display_sec=1, conn_attempt=5, conn_tr
     :param conn_try_sec: time between each reconnection try
     :return:
     """
-    Globals.add_global_handles(handles)
-    Globals.add_global_information(information)
     threads = []
     while not Globals.exiting:
         time.sleep(display_sec)

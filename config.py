@@ -295,8 +295,8 @@ def ld_dio_update_config(handle, dio_dir, dio_state):
     :param dio_state:
     :return:
     """
-    fio_state_register = ljm.eReadAddress(handle, Kernel.T7_FIO_STATE, Kernel.T7_FIO_STATE_T)
-    fio_dir_register = ljm.eReadAddress(handle, Kernel.T7_FIO_DIR, Kernel.T7_FIO_DIR_T)
+    fio_state_register = int(ljm.eReadAddress(handle, Kernel.T7_FIO_STATE, Kernel.T7_FIO_STATE_T))
+    fio_dir_register = int(ljm.eReadAddress(handle, Kernel.T7_FIO_DIR, Kernel.T7_FIO_DIR_T))
     ljm.eWriteAddress(handle, Kernel.T7_FIO_DIR, Kernel.T7_FIO_DIR_T, fio_dir_register | dio_dir)
     ljm.eWriteAddress(handle, Kernel.T7_FIO_STATE, Kernel.T7_FIO_STATE_T, fio_state_register | dio_state)
     return
@@ -356,7 +356,7 @@ def ld_dac_alter_config(handle, dac_addr, value_list):
 
 
 def aio_alter_resolution_config(handle, addr_list, res_list):
-    valid_addr = res_validator(addr_list)
+    valid_addr = res_addr_validator(addr_list)
     valid_res = res_validator(res_list)
     if 1 == valid_addr:
         if 1 == valid_res:
@@ -529,9 +529,10 @@ def ld_dio_config(handles, dio_dir=None, dio_state=None, update_dio=0):
 
 
 def ld_settling_config(handles, addr_list, settling_time):
+    print("\tConfiguring analog input settling time")
     for handle in handles:
         try:
-            if 0 > aio_alter_resolution_config(handle, addr_list, settling_time):
+            if 0 > aio_alter_settling_time_config(handle, addr_list, settling_time):
                 print("Error occurred during configuration of device " + str(ljm.getHandleInfo(handle)))
                 return -1
         except ljm.ljm.LJMError:
@@ -543,6 +544,7 @@ def ld_settling_config(handles, addr_list, settling_time):
 
 
 def ld_resolution_config(handles, addr_list, res_list):
+    print("\tConfiguring analog input resolution")
     for handle in handles:
         try:
             if 0 > aio_alter_resolution_config(handle, addr_list, res_list):
@@ -1131,7 +1133,7 @@ def dac_addr_error(error_code, addr_list):
         dac_addr_validator(addr_list, 1)
     elif -1 == error_code:
         print("Invalid address for analog output.")
-        ain_addr_validator(addr_list, 1)
+        dac_addr_validator(addr_list, 1)
     elif -2 == error_code:
         print("Address list is empty.")
 
@@ -1161,10 +1163,10 @@ def ain_addr_error(error_code, addr_list):
 def settling_addr_error(error_code, addr_list):
     if -3 == error_code:
         print("Invalid address type.")
-        ain_addr_validator(addr_list, 1)
+        settling_addr_validator(addr_list, 1)
     elif -1 == error_code:
         print("Invalid settling address.")
-        ain_addr_validator(addr_list, 1)
+        settling_addr_validator(addr_list, 1)
     elif -2 == error_code:
         print("Address list is empty.")
 
@@ -1172,10 +1174,10 @@ def settling_addr_error(error_code, addr_list):
 def res_addr_error(error_code, addr_list):
     if -3 == error_code:
         print("Invalid address type.")
-        ain_addr_validator(addr_list, 1)
+        res_addr_validator(addr_list, 1)
     elif -1 == error_code:
         print("Invalid resolution address.")
-        ain_addr_validator(addr_list, 1)
+        res_addr_validator(addr_list, 1)
     elif -2 == error_code:
         print("Address list is empty.")
 
