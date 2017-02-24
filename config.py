@@ -341,7 +341,8 @@ def ld_dac_alter_config(handle, dac_addr, value_list):
             ljm.eWriteAddress(handle, dac_addr, Kernel.T7_DAC_T, value_list)
         elif 1 == valid_voltage:
             print("Well it is correct, " +
-                  "but configuring multiple voltage for a single analog address doesn't make sense, isn't it?")
+                  "but configuring multiple voltage for a single analog address doesn't make sense, isn't it?"
+            )
             print("ranges:" + str(value_list))
             print("address:" + str(dac_addr))
             return -1
@@ -357,13 +358,81 @@ def ld_dac_alter_config(handle, dac_addr, value_list):
 def aio_alter_resolution_config(handle, addr_list, res_list):
     valid_addr = res_validator(addr_list)
     valid_res = res_validator(res_list)
-    return
+    if 1 == valid_addr:
+        if 1 == valid_res:
+            if len(res_list) == len(addr_list):
+                for resolution, addr in zip(res_list, addr_list):
+                    ljm.eWriteAddress(handle, addr, Kernel.T7_AIN_RESOLUTION_INDEX_T, resolution)
+            else:
+                print(
+                    "\
+                    Unable to configure analog output voltage due to voltage array size less than address array size.\
+                    "
+                )
+                return -1
+        elif 0 == valid_res:
+            for addr in addr_list:
+                ljm.eWriteAddress(handle, addr, Kernel.T7_AIN_RESOLUTION_INDEX_T, res_list)
+        else:
+            res_error(valid_res, res_list)
+            return -1
+    elif 2 == valid_addr:
+        if 0 == res_list:
+            ljm.eWriteAddress(handle, addr_list, Kernel.T7_AIN_RESOLUTION_INDEX_T, res_list)
+        elif 1 == res_list:
+            print("Well it is correct, " +
+                  "but configuring multiple resolutions for a single analog address doesn't make sense, isn't it?"
+            )
+            print("resolutions:" + str(res_list))
+            print("address:" + str(addr_list))
+            return -1
+        else:
+            res_error(valid_res, res_list)
+            return -1
+    else:
+        res_addr_error(valid_addr, addr_list)
+        return -1
+    return 0
 
 
 def aio_alter_settling_time_config(handle, addr_list, settling_time_list):
     valid_addr = settling_addr_validator(addr_list)
-    valid_res = settling_time_validator(settling_time_list)
-    return
+    valid_settling = settling_time_validator(settling_time_list)
+    if 1 == valid_addr:
+        if 1 == valid_settling:
+            if len(settling_time_list) == len(addr_list):
+                for settling_time, addr in zip(settling_time_list, addr_list):
+                    ljm.eWriteAddress(handle, addr, Kernel.T7_AIN_SETTLING_US_T, settling_time)
+            else:
+                print(
+                    "\
+                    Unable to configure analog output voltage due to voltage array size less than address array size.\
+                    "
+                )
+                return -1
+        elif 0 == valid_settling:
+            for addr in addr_list:
+                ljm.eWriteAddress(handle, addr, Kernel.T7_AIN_SETTLING_US_T, settling_time_list)
+        else:
+            settling_error(valid_settling, settling_time_list)
+            return -1
+    elif 2 == valid_addr:
+        if 0 == valid_settling:
+            ljm.eWriteAddress(handle, addr_list, Kernel.T7_AIN_SETTLING_US_T, settling_time_list)
+        elif 1 == valid_settling:
+            print("Well it is correct, " +
+                  "but configuring multiple resolutions for a single analog address doesn't make sense, isn't it?"
+            )
+            print("settling time:" + str(settling_time_list))
+            print("address:" + str(addr_list))
+            return -1
+        else:
+            res_error(valid_settling, settling_time_list)
+            return -1
+    else:
+        settling_addr_error(valid_addr, addr_list)
+        return -1
+    return 0
 
 
 def ld_aio_alter_range_config(handle, addr_list, range_list):
@@ -1012,7 +1081,7 @@ def settling_time_validator(settling_list, display=0):
 
 def res_validator(res_list, display=0):
     resolution_list = [
-        "auto", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
     ]
     if type(res_list) == type([]):
         if 0 != len(res_list):
