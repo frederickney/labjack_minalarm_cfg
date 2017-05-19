@@ -1,6 +1,5 @@
 __author__ = 'Frederick NEY'
 from labjack import ljm
-from KeyboardManager import *
 import sys
 
 
@@ -33,7 +32,7 @@ class Stream:
         for handle in self.handles:
             scanRate = ljm.eStreamStart(handle, scansPerRead, len(io_name), io_name, self.rate)
         try:
-            while i <= request and not Globals.exiting:
+            while i <= request:
                 for handle in self.handles:
                     stream = ljm.eStreamRead(handle)
 
@@ -61,7 +60,7 @@ class Stream:
             e = sys.exc_info()[1]
             print(e)
 
-    def readSteam(self, io_name, request_num, scansPerRead, array):
+    def syncStream(self, io_name, request_num, scansPerRead, array):
         """
             Function use for consulting value on the streamer
         :param io_name: input output name to scan
@@ -77,7 +76,7 @@ class Stream:
             """
             scanRate = ljm.eStreamStart(handle, scansPerRead, len(io_addr), io_addr, self.rate)
         try:
-            while i <= request_num and not Globals.exiting:
+            while i <= request_num:
                 j = 0
                 for handle in self.handles:
                     """
@@ -114,6 +113,3 @@ class Stream:
         except Exception:
             e = sys.exc_info()
             print(e)
-        for i in range(len(self.handles)):
-            for j in range(len(array[i])):
-                print(array[i][j])
