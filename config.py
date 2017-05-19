@@ -264,7 +264,7 @@ AIN_ADDRS = [
     Kernel.T7_AIN240_RANGE, Kernel.T7_AIN241_RANGE, Kernel.T7_AIN242_RANGE, Kernel.T7_AIN243_RANGE,
     Kernel.T7_AIN244_RANGE, Kernel.T7_AIN245_RANGE, Kernel.T7_AIN246_RANGE, Kernel.T7_AIN247_RANGE,
     Kernel.T7_AIN248_RANGE, Kernel.T7_AIN249_RANGE, Kernel.T7_AIN250_RANGE, Kernel.T7_AIN251_RANGE,
-    Kernel.T7_AIN252_RANGE, Kernel.T7_AIN253_RANGE, Kernel.T7_AIN254_RANGE, Kernel.T7_AIN_ALL_RANGE
+    Kernel.T7_AIN252_RANGE, Kernel.T7_AIN253_RANGE, Kernel.T7_AIN254_RANGE, Kernel.T7_AIN_ALL_RANGE,
 ]
 
 RANGE_LIST = [
@@ -280,6 +280,95 @@ AIN_ADDR_VALUE = -1
 RANGE_SIZE = -2
 RANGE_TYPE = -3
 RANGE_VALUE = -1
+
+NEGATIVE_REF_ADDR = [
+    Kernel.T7_AIN0_NEGATIVE_CH, Kernel.T7_AIN1_NEGATIVE_CH, Kernel.T7_AIN2_NEGATIVE_CH,
+    Kernel.T7_AIN3_NEGATIVE_CH, Kernel.T7_AIN4_NEGATIVE_CH, Kernel.T7_AIN5_NEGATIVE_CH,
+    Kernel.T7_AIN6_NEGATIVE_CH, Kernel.T7_AIN7_NEGATIVE_CH, Kernel.T7_AIN8_NEGATIVE_CH,
+    Kernel.T7_AIN9_NEGATIVE_CH, Kernel.T7_AIN10_NEGATIVE_CH, Kernel.T7_AIN11_NEGATIVE_CH,
+    Kernel.T7_AIN12_NEGATIVE_CH, Kernel.T7_AIN13_NEGATIVE_CH, Kernel.T7_AIN14_NEGATIVE_CH,
+    Kernel.T7_AIN15_NEGATIVE_CH, Kernel.T7_AIN16_NEGATIVE_CH, Kernel.T7_AIN17_NEGATIVE_CH,
+    Kernel.T7_AIN18_NEGATIVE_CH, Kernel.T7_AIN19_NEGATIVE_CH, Kernel.T7_AIN20_NEGATIVE_CH,
+    Kernel.T7_AIN21_NEGATIVE_CH, Kernel.T7_AIN22_NEGATIVE_CH, Kernel.T7_AIN23_NEGATIVE_CH,
+    Kernel.T7_AIN24_NEGATIVE_CH, Kernel.T7_AIN25_NEGATIVE_CH, Kernel.T7_AIN26_NEGATIVE_CH,
+    Kernel.T7_AIN27_NEGATIVE_CH, Kernel.T7_AIN28_NEGATIVE_CH, Kernel.T7_AIN29_NEGATIVE_CH,
+    Kernel.T7_AIN30_NEGATIVE_CH, Kernel.T7_AIN31_NEGATIVE_CH, Kernel.T7_AIN32_NEGATIVE_CH,
+    Kernel.T7_AIN33_NEGATIVE_CH, Kernel.T7_AIN34_NEGATIVE_CH, Kernel.T7_AIN35_NEGATIVE_CH,
+    Kernel.T7_AIN36_NEGATIVE_CH, Kernel.T7_AIN37_NEGATIVE_CH, Kernel.T7_AIN38_NEGATIVE_CH,
+    Kernel.T7_AIN39_NEGATIVE_CH, Kernel.T7_AIN40_NEGATIVE_CH, Kernel.T7_AIN41_NEGATIVE_CH,
+    Kernel.T7_AIN42_NEGATIVE_CH, Kernel.T7_AIN43_NEGATIVE_CH, Kernel.T7_AIN44_NEGATIVE_CH,
+    Kernel.T7_AIN45_NEGATIVE_CH, Kernel.T7_AIN46_NEGATIVE_CH, Kernel.T7_AIN47_NEGATIVE_CH,
+    Kernel.T7_AIN48_NEGATIVE_CH, Kernel.T7_AIN49_NEGATIVE_CH, Kernel.T7_AIN50_NEGATIVE_CH,
+    Kernel.T7_AIN51_NEGATIVE_CH, Kernel.T7_AIN52_NEGATIVE_CH, Kernel.T7_AIN53_NEGATIVE_CH,
+    Kernel.T7_AIN54_NEGATIVE_CH, Kernel.T7_AIN55_NEGATIVE_CH, Kernel.T7_AIN56_NEGATIVE_CH,
+    Kernel.T7_AIN57_NEGATIVE_CH, Kernel.T7_AIN58_NEGATIVE_CH, Kernel.T7_AIN59_NEGATIVE_CH,
+    Kernel.T7_AIN60_NEGATIVE_CH, Kernel.T7_AIN61_NEGATIVE_CH, Kernel.T7_AIN62_NEGATIVE_CH,
+    Kernel.T7_AIN63_NEGATIVE_CH, Kernel.T7_AIN64_NEGATIVE_CH, Kernel.T7_AIN65_NEGATIVE_CH,
+    Kernel.T7_AIN66_NEGATIVE_CH, Kernel.T7_AIN67_NEGATIVE_CH, Kernel.T7_AIN68_NEGATIVE_CH,
+    Kernel.T7_AIN69_NEGATIVE_CH, Kernel.T7_AIN70_NEGATIVE_CH, Kernel.T7_AIN71_NEGATIVE_CH,
+    Kernel.T7_AIN72_NEGATIVE_CH, Kernel.T7_AIN73_NEGATIVE_CH, Kernel.T7_AIN74_NEGATIVE_CH,
+    Kernel.T7_AIN75_NEGATIVE_CH, Kernel.T7_AIN76_NEGATIVE_CH, Kernel.T7_AIN77_NEGATIVE_CH,
+    Kernel.T7_AIN78_NEGATIVE_CH, Kernel.T7_AIN79_NEGATIVE_CH, Kernel.T7_AIN80_NEGATIVE_CH,
+    Kernel.T7_AIN81_NEGATIVE_CH, Kernel.T7_AIN82_NEGATIVE_CH, Kernel.T7_AIN83_NEGATIVE_CH,
+    Kernel.T7_AIN84_NEGATIVE_CH, Kernel.T7_AIN85_NEGATIVE_CH, Kernel.T7_AIN86_NEGATIVE_CH,
+    Kernel.T7_AIN87_NEGATIVE_CH, Kernel.T7_AIN88_NEGATIVE_CH, Kernel.T7_AIN89_NEGATIVE_CH,
+    Kernel.T7_AIN90_NEGATIVE_CH, Kernel.T7_AIN91_NEGATIVE_CH, Kernel.T7_AIN92_NEGATIVE_CH,
+    Kernel.T7_AIN93_NEGATIVE_CH, Kernel.T7_AIN94_NEGATIVE_CH, Kernel.T7_AIN95_NEGATIVE_CH,
+    Kernel.T7_AIN96_NEGATIVE_CH, Kernel.T7_AIN97_NEGATIVE_CH, Kernel.T7_AIN98_NEGATIVE_CH,
+    Kernel.T7_AIN99_NEGATIVE_CH, Kernel.T7_AIN100_NEGATIVE_CH, Kernel.T7_AIN101_NEGATIVE_CH,
+    Kernel.T7_AIN102_NEGATIVE_CH, Kernel.T7_AIN103_NEGATIVE_CH, Kernel.T7_AIN104_NEGATIVE_CH,
+    Kernel.T7_AIN105_NEGATIVE_CH, Kernel.T7_AIN106_NEGATIVE_CH, Kernel.T7_AIN107_NEGATIVE_CH,
+    Kernel.T7_AIN108_NEGATIVE_CH, Kernel.T7_AIN109_NEGATIVE_CH, Kernel.T7_AIN110_NEGATIVE_CH,
+    Kernel.T7_AIN111_NEGATIVE_CH, Kernel.T7_AIN112_NEGATIVE_CH, Kernel.T7_AIN113_NEGATIVE_CH,
+    Kernel.T7_AIN114_NEGATIVE_CH, Kernel.T7_AIN115_NEGATIVE_CH, Kernel.T7_AIN116_NEGATIVE_CH,
+    Kernel.T7_AIN117_NEGATIVE_CH, Kernel.T7_AIN118_NEGATIVE_CH, Kernel.T7_AIN119_NEGATIVE_CH,
+    Kernel.T7_AIN120_NEGATIVE_CH, Kernel.T7_AIN121_NEGATIVE_CH, Kernel.T7_AIN122_NEGATIVE_CH,
+    Kernel.T7_AIN123_NEGATIVE_CH, Kernel.T7_AIN124_NEGATIVE_CH, Kernel.T7_AIN125_NEGATIVE_CH,
+    Kernel.T7_AIN126_NEGATIVE_CH, Kernel.T7_AIN127_NEGATIVE_CH, Kernel.T7_AIN128_NEGATIVE_CH,
+    Kernel.T7_AIN129_NEGATIVE_CH, Kernel.T7_AIN130_NEGATIVE_CH, Kernel.T7_AIN131_NEGATIVE_CH,
+    Kernel.T7_AIN132_NEGATIVE_CH, Kernel.T7_AIN133_NEGATIVE_CH, Kernel.T7_AIN134_NEGATIVE_CH,
+    Kernel.T7_AIN135_NEGATIVE_CH, Kernel.T7_AIN136_NEGATIVE_CH, Kernel.T7_AIN137_NEGATIVE_CH,
+    Kernel.T7_AIN138_NEGATIVE_CH, Kernel.T7_AIN139_NEGATIVE_CH, Kernel.T7_AIN140_NEGATIVE_CH,
+    Kernel.T7_AIN141_NEGATIVE_CH, Kernel.T7_AIN142_NEGATIVE_CH, Kernel.T7_AIN143_NEGATIVE_CH,
+    Kernel.T7_AIN144_NEGATIVE_CH, Kernel.T7_AIN145_NEGATIVE_CH, Kernel.T7_AIN146_NEGATIVE_CH,
+    Kernel.T7_AIN147_NEGATIVE_CH, Kernel.T7_AIN148_NEGATIVE_CH, Kernel.T7_AIN149_NEGATIVE_CH,
+    Kernel.T7_AIN150_NEGATIVE_CH, Kernel.T7_AIN151_NEGATIVE_CH, Kernel.T7_AIN152_NEGATIVE_CH,
+    Kernel.T7_AIN153_NEGATIVE_CH, Kernel.T7_AIN154_NEGATIVE_CH, Kernel.T7_AIN155_NEGATIVE_CH,
+    Kernel.T7_AIN156_NEGATIVE_CH, Kernel.T7_AIN157_NEGATIVE_CH, Kernel.T7_AIN158_NEGATIVE_CH,
+    Kernel.T7_AIN159_NEGATIVE_CH, Kernel.T7_AIN160_NEGATIVE_CH, Kernel.T7_AIN161_NEGATIVE_CH,
+    Kernel.T7_AIN162_NEGATIVE_CH, Kernel.T7_AIN163_NEGATIVE_CH, Kernel.T7_AIN164_NEGATIVE_CH,
+    Kernel.T7_AIN165_NEGATIVE_CH, Kernel.T7_AIN166_NEGATIVE_CH, Kernel.T7_AIN167_NEGATIVE_CH,
+    Kernel.T7_AIN168_NEGATIVE_CH, Kernel.T7_AIN169_NEGATIVE_CH, Kernel.T7_AIN170_NEGATIVE_CH,
+    Kernel.T7_AIN171_NEGATIVE_CH, Kernel.T7_AIN172_NEGATIVE_CH, Kernel.T7_AIN173_NEGATIVE_CH,
+    Kernel.T7_AIN174_NEGATIVE_CH, Kernel.T7_AIN175_NEGATIVE_CH, Kernel.T7_AIN176_NEGATIVE_CH,
+    Kernel.T7_AIN177_NEGATIVE_CH, Kernel.T7_AIN178_NEGATIVE_CH, Kernel.T7_AIN179_NEGATIVE_CH,
+    Kernel.T7_AIN180_NEGATIVE_CH, Kernel.T7_AIN181_NEGATIVE_CH, Kernel.T7_AIN182_NEGATIVE_CH,
+    Kernel.T7_AIN183_NEGATIVE_CH, Kernel.T7_AIN184_NEGATIVE_CH, Kernel.T7_AIN185_NEGATIVE_CH,
+    Kernel.T7_AIN186_NEGATIVE_CH, Kernel.T7_AIN187_NEGATIVE_CH, Kernel.T7_AIN188_NEGATIVE_CH,
+    Kernel.T7_AIN189_NEGATIVE_CH, Kernel.T7_AIN190_NEGATIVE_CH, Kernel.T7_AIN191_NEGATIVE_CH,
+    Kernel.T7_AIN192_NEGATIVE_CH, Kernel.T7_AIN193_NEGATIVE_CH, Kernel.T7_AIN194_NEGATIVE_CH,
+    Kernel.T7_AIN195_NEGATIVE_CH, Kernel.T7_AIN196_NEGATIVE_CH, Kernel.T7_AIN197_NEGATIVE_CH,
+    Kernel.T7_AIN198_NEGATIVE_CH, Kernel.T7_AIN199_NEGATIVE_CH, Kernel.T7_AIN200_NEGATIVE_CH,
+    Kernel.T7_AIN201_NEGATIVE_CH, Kernel.T7_AIN202_NEGATIVE_CH, Kernel.T7_AIN203_NEGATIVE_CH,
+    Kernel.T7_AIN204_NEGATIVE_CH, Kernel.T7_AIN205_NEGATIVE_CH, Kernel.T7_AIN206_NEGATIVE_CH,
+    Kernel.T7_AIN207_NEGATIVE_CH, Kernel.T7_AIN208_NEGATIVE_CH, Kernel.T7_AIN209_NEGATIVE_CH,
+    Kernel.T7_AIN210_NEGATIVE_CH, Kernel.T7_AIN211_NEGATIVE_CH, Kernel.T7_AIN212_NEGATIVE_CH,
+    Kernel.T7_AIN213_NEGATIVE_CH, Kernel.T7_AIN214_NEGATIVE_CH, Kernel.T7_AIN215_NEGATIVE_CH,
+    Kernel.T7_AIN216_NEGATIVE_CH, Kernel.T7_AIN217_NEGATIVE_CH, Kernel.T7_AIN218_NEGATIVE_CH,
+    Kernel.T7_AIN219_NEGATIVE_CH, Kernel.T7_AIN220_NEGATIVE_CH, Kernel.T7_AIN221_NEGATIVE_CH,
+    Kernel.T7_AIN222_NEGATIVE_CH, Kernel.T7_AIN223_NEGATIVE_CH, Kernel.T7_AIN224_NEGATIVE_CH,
+    Kernel.T7_AIN225_NEGATIVE_CH, Kernel.T7_AIN226_NEGATIVE_CH, Kernel.T7_AIN227_NEGATIVE_CH,
+    Kernel.T7_AIN228_NEGATIVE_CH, Kernel.T7_AIN229_NEGATIVE_CH, Kernel.T7_AIN230_NEGATIVE_CH,
+    Kernel.T7_AIN231_NEGATIVE_CH, Kernel.T7_AIN232_NEGATIVE_CH, Kernel.T7_AIN233_NEGATIVE_CH,
+    Kernel.T7_AIN234_NEGATIVE_CH, Kernel.T7_AIN235_NEGATIVE_CH, Kernel.T7_AIN236_NEGATIVE_CH,
+    Kernel.T7_AIN237_NEGATIVE_CH, Kernel.T7_AIN238_NEGATIVE_CH, Kernel.T7_AIN239_NEGATIVE_CH,
+    Kernel.T7_AIN240_NEGATIVE_CH, Kernel.T7_AIN241_NEGATIVE_CH, Kernel.T7_AIN242_NEGATIVE_CH,
+    Kernel.T7_AIN243_NEGATIVE_CH, Kernel.T7_AIN244_NEGATIVE_CH, Kernel.T7_AIN245_NEGATIVE_CH,
+    Kernel.T7_AIN246_NEGATIVE_CH, Kernel.T7_AIN247_NEGATIVE_CH, Kernel.T7_AIN248_NEGATIVE_CH,
+    Kernel.T7_AIN249_NEGATIVE_CH, Kernel.T7_AIN250_NEGATIVE_CH, Kernel.T7_AIN251_NEGATIVE_CH,
+    Kernel.T7_AIN252_NEGATIVE_CH, Kernel.T7_AIN253_NEGATIVE_CH, Kernel.T7_AIN254_NEGATIVE_CH,
+    Kernel.T7_AIN_ALL_NEGATIVE_CH
+]
 """
 /**********************************************************************************************************************/
 /****************************************DIRECT ACCESS TO DEVICE FUNCTION**********************************************/
@@ -299,6 +388,18 @@ def ld_dio_update_config(handle, dio_dir, dio_state):
     fio_dir_register = int(ljm.eReadAddress(handle, Kernel.T7_FIO_DIR, Kernel.T7_FIO_DIR_T))
     ljm.eWriteAddress(handle, Kernel.T7_FIO_DIR, Kernel.T7_FIO_DIR_T, fio_dir_register | dio_dir)
     ljm.eWriteAddress(handle, Kernel.T7_FIO_STATE, Kernel.T7_FIO_STATE_T, fio_state_register | dio_state)
+    return
+
+
+def ld_set_negative_ref(handle, io_gnd_addr, ref_addr):
+    """
+
+    :param handle:
+    :param io_gnd_addr:
+    :param ref_addr:
+    :return:
+    """
+    ljm.eWriteAddress(handle, io_gnd_addr, Kernel.T7_AIN_NEGATIVE_CH_T, ref_addr)
     return
 
 
@@ -485,6 +586,52 @@ def ld_aio_alter_range_config(handle, addr_list, range_list):
     return 0
 
 
+def ld_gnd_conf(handle, io_gnd_addr, ref_addr):
+    """
+        Function to set gnd references
+    :param handle:
+    :param io_gnd_addr:
+    :param ref_addr:
+    :return: error: -1 success: 0
+    """
+    valid_addr = gnd_ref_validator(ref_addr)
+    valid_analog = ain_index_validator(io_gnd_addr)
+    if 1 == valid_addr:
+        if 1 == valid_analog:
+            if len(ref_addr) == len(io_gnd_addr):
+                for gnd, addr in zip(io_gnd_addr, ref_addr):
+                    ljm.eWriteAddress(handle, addr, Kernel.T7_AIN_NEGATIVE_CH_T, gnd)
+            else:
+                print(
+                    "\
+                    Unable to configure gnd references address due to analog array size less than address array size.\
+                    "
+                )
+                return -1
+        else:
+            print(
+                "\
+                Unable to configure gnd references address due to analog array size less than address array size.\
+                "
+                )
+            ain_addr_error(valid_analog, io_gnd_addr)
+            return -1
+    elif 2 == valid_addr:
+        if 2 == valid_analog:
+            ljm.eWriteAddress(handle, ref_addr, Kernel.T7_AIN_RANGE_T, io_gnd_addr)
+        elif 1 == valid_analog:
+            print("Well it is correct, " +
+                  "but configuring multiple gnd references address for a analog input doesn't make sense, isn't it?")
+            print("ranges:" + str(io_gnd_addr))
+            print("address:" + str(ref_addr))
+            return -1
+        else:
+            ain_addr_error(valid_analog, io_gnd_addr)
+    else:
+        gnd_error(valid_addr, ref_addr)
+        return -1
+    return 0
+
 """
 /**********************************************************************************************************************/
 /**************************************************CONFIG FUNCTION*****************************************************/
@@ -600,6 +747,21 @@ def ld_ain_config(handles, analog_addr, aio_dir=0, ain_range=None, dac_values=No
         else:
             print("ERROR: Leaving analog output to current labjack configuration")
             return -1
+    return 0
+
+
+def ld_gnd_ref_conf(handles, ref_addr, io_gnd_addr):
+    print("\tConfiguring gnd reference")
+    for handle in handles:
+        try:
+            if 0 > ld_gnd_conf(handle, io_gnd_addr, ref_addr):
+                print("Error occurred during configuration of device " + str(ljm.getHandleInfo(handle)))
+                return -1
+        except ljm.ljm.LJMError:
+            print("Error unable to communicate with device " + str(ljm.getHandleInfo(handle)))
+            print("Leaving unconfigured.")
+            handles.remove(handle)
+            print("Device removed from the list of devices")
     return 0
 
 
@@ -1120,6 +1282,137 @@ def res_validator(res_list, display=0):
         return -3
 
 
+def ain_index_validator(ain_index, display=0):
+    if type(ain_index) == type([]):
+        if 0 != len(ain_index):
+            return 1
+        else:
+            return -1
+    elif isinstance(ain_index, int):
+        return 2
+    else:
+        if display:
+            print(
+                "Found " + str(type(ain_index)) +
+                " instead of " + str(type([])) + " or " + str(int)
+            )
+        return -2
+
+
+def gnd_ref_validator(addr_list, display=0):
+    negative_ref_addr = [
+        Kernel.T7_AIN0_NEGATIVE_CH, Kernel.T7_AIN1_NEGATIVE_CH, Kernel.T7_AIN2_NEGATIVE_CH,
+        Kernel.T7_AIN3_NEGATIVE_CH, Kernel.T7_AIN4_NEGATIVE_CH, Kernel.T7_AIN5_NEGATIVE_CH,
+        Kernel.T7_AIN6_NEGATIVE_CH, Kernel.T7_AIN7_NEGATIVE_CH, Kernel.T7_AIN8_NEGATIVE_CH,
+        Kernel.T7_AIN9_NEGATIVE_CH, Kernel.T7_AIN10_NEGATIVE_CH, Kernel.T7_AIN11_NEGATIVE_CH,
+        Kernel.T7_AIN12_NEGATIVE_CH, Kernel.T7_AIN13_NEGATIVE_CH, Kernel.T7_AIN14_NEGATIVE_CH,
+        Kernel.T7_AIN15_NEGATIVE_CH, Kernel.T7_AIN16_NEGATIVE_CH, Kernel.T7_AIN17_NEGATIVE_CH,
+        Kernel.T7_AIN18_NEGATIVE_CH, Kernel.T7_AIN19_NEGATIVE_CH, Kernel.T7_AIN20_NEGATIVE_CH,
+        Kernel.T7_AIN21_NEGATIVE_CH, Kernel.T7_AIN22_NEGATIVE_CH, Kernel.T7_AIN23_NEGATIVE_CH,
+        Kernel.T7_AIN24_NEGATIVE_CH, Kernel.T7_AIN25_NEGATIVE_CH, Kernel.T7_AIN26_NEGATIVE_CH,
+        Kernel.T7_AIN27_NEGATIVE_CH, Kernel.T7_AIN28_NEGATIVE_CH, Kernel.T7_AIN29_NEGATIVE_CH,
+        Kernel.T7_AIN30_NEGATIVE_CH, Kernel.T7_AIN31_NEGATIVE_CH, Kernel.T7_AIN32_NEGATIVE_CH,
+        Kernel.T7_AIN33_NEGATIVE_CH, Kernel.T7_AIN34_NEGATIVE_CH, Kernel.T7_AIN35_NEGATIVE_CH,
+        Kernel.T7_AIN36_NEGATIVE_CH, Kernel.T7_AIN37_NEGATIVE_CH, Kernel.T7_AIN38_NEGATIVE_CH,
+        Kernel.T7_AIN39_NEGATIVE_CH, Kernel.T7_AIN40_NEGATIVE_CH, Kernel.T7_AIN41_NEGATIVE_CH,
+        Kernel.T7_AIN42_NEGATIVE_CH, Kernel.T7_AIN43_NEGATIVE_CH, Kernel.T7_AIN44_NEGATIVE_CH,
+        Kernel.T7_AIN45_NEGATIVE_CH, Kernel.T7_AIN46_NEGATIVE_CH, Kernel.T7_AIN47_NEGATIVE_CH,
+        Kernel.T7_AIN48_NEGATIVE_CH, Kernel.T7_AIN49_NEGATIVE_CH, Kernel.T7_AIN50_NEGATIVE_CH,
+        Kernel.T7_AIN51_NEGATIVE_CH, Kernel.T7_AIN52_NEGATIVE_CH, Kernel.T7_AIN53_NEGATIVE_CH,
+        Kernel.T7_AIN54_NEGATIVE_CH, Kernel.T7_AIN55_NEGATIVE_CH, Kernel.T7_AIN56_NEGATIVE_CH,
+        Kernel.T7_AIN57_NEGATIVE_CH, Kernel.T7_AIN58_NEGATIVE_CH, Kernel.T7_AIN59_NEGATIVE_CH,
+        Kernel.T7_AIN60_NEGATIVE_CH, Kernel.T7_AIN61_NEGATIVE_CH, Kernel.T7_AIN62_NEGATIVE_CH,
+        Kernel.T7_AIN63_NEGATIVE_CH, Kernel.T7_AIN64_NEGATIVE_CH, Kernel.T7_AIN65_NEGATIVE_CH,
+        Kernel.T7_AIN66_NEGATIVE_CH, Kernel.T7_AIN67_NEGATIVE_CH, Kernel.T7_AIN68_NEGATIVE_CH,
+        Kernel.T7_AIN69_NEGATIVE_CH, Kernel.T7_AIN70_NEGATIVE_CH, Kernel.T7_AIN71_NEGATIVE_CH,
+        Kernel.T7_AIN72_NEGATIVE_CH, Kernel.T7_AIN73_NEGATIVE_CH, Kernel.T7_AIN74_NEGATIVE_CH,
+        Kernel.T7_AIN75_NEGATIVE_CH, Kernel.T7_AIN76_NEGATIVE_CH, Kernel.T7_AIN77_NEGATIVE_CH,
+        Kernel.T7_AIN78_NEGATIVE_CH, Kernel.T7_AIN79_NEGATIVE_CH, Kernel.T7_AIN80_NEGATIVE_CH,
+        Kernel.T7_AIN81_NEGATIVE_CH, Kernel.T7_AIN82_NEGATIVE_CH, Kernel.T7_AIN83_NEGATIVE_CH,
+        Kernel.T7_AIN84_NEGATIVE_CH, Kernel.T7_AIN85_NEGATIVE_CH, Kernel.T7_AIN86_NEGATIVE_CH,
+        Kernel.T7_AIN87_NEGATIVE_CH, Kernel.T7_AIN88_NEGATIVE_CH, Kernel.T7_AIN89_NEGATIVE_CH,
+        Kernel.T7_AIN90_NEGATIVE_CH, Kernel.T7_AIN91_NEGATIVE_CH, Kernel.T7_AIN92_NEGATIVE_CH,
+        Kernel.T7_AIN93_NEGATIVE_CH, Kernel.T7_AIN94_NEGATIVE_CH, Kernel.T7_AIN95_NEGATIVE_CH,
+        Kernel.T7_AIN96_NEGATIVE_CH, Kernel.T7_AIN97_NEGATIVE_CH, Kernel.T7_AIN98_NEGATIVE_CH,
+        Kernel.T7_AIN99_NEGATIVE_CH, Kernel.T7_AIN100_NEGATIVE_CH, Kernel.T7_AIN101_NEGATIVE_CH,
+        Kernel.T7_AIN102_NEGATIVE_CH, Kernel.T7_AIN103_NEGATIVE_CH, Kernel.T7_AIN104_NEGATIVE_CH,
+        Kernel.T7_AIN105_NEGATIVE_CH, Kernel.T7_AIN106_NEGATIVE_CH, Kernel.T7_AIN107_NEGATIVE_CH,
+        Kernel.T7_AIN108_NEGATIVE_CH, Kernel.T7_AIN109_NEGATIVE_CH, Kernel.T7_AIN110_NEGATIVE_CH,
+        Kernel.T7_AIN111_NEGATIVE_CH, Kernel.T7_AIN112_NEGATIVE_CH, Kernel.T7_AIN113_NEGATIVE_CH,
+        Kernel.T7_AIN114_NEGATIVE_CH, Kernel.T7_AIN115_NEGATIVE_CH, Kernel.T7_AIN116_NEGATIVE_CH,
+        Kernel.T7_AIN117_NEGATIVE_CH, Kernel.T7_AIN118_NEGATIVE_CH, Kernel.T7_AIN119_NEGATIVE_CH,
+        Kernel.T7_AIN120_NEGATIVE_CH, Kernel.T7_AIN121_NEGATIVE_CH, Kernel.T7_AIN122_NEGATIVE_CH,
+        Kernel.T7_AIN123_NEGATIVE_CH, Kernel.T7_AIN124_NEGATIVE_CH, Kernel.T7_AIN125_NEGATIVE_CH,
+        Kernel.T7_AIN126_NEGATIVE_CH, Kernel.T7_AIN127_NEGATIVE_CH, Kernel.T7_AIN128_NEGATIVE_CH,
+        Kernel.T7_AIN129_NEGATIVE_CH, Kernel.T7_AIN130_NEGATIVE_CH, Kernel.T7_AIN131_NEGATIVE_CH,
+        Kernel.T7_AIN132_NEGATIVE_CH, Kernel.T7_AIN133_NEGATIVE_CH, Kernel.T7_AIN134_NEGATIVE_CH,
+        Kernel.T7_AIN135_NEGATIVE_CH, Kernel.T7_AIN136_NEGATIVE_CH, Kernel.T7_AIN137_NEGATIVE_CH,
+        Kernel.T7_AIN138_NEGATIVE_CH, Kernel.T7_AIN139_NEGATIVE_CH, Kernel.T7_AIN140_NEGATIVE_CH,
+        Kernel.T7_AIN141_NEGATIVE_CH, Kernel.T7_AIN142_NEGATIVE_CH, Kernel.T7_AIN143_NEGATIVE_CH,
+        Kernel.T7_AIN144_NEGATIVE_CH, Kernel.T7_AIN145_NEGATIVE_CH, Kernel.T7_AIN146_NEGATIVE_CH,
+        Kernel.T7_AIN147_NEGATIVE_CH, Kernel.T7_AIN148_NEGATIVE_CH, Kernel.T7_AIN149_NEGATIVE_CH,
+        Kernel.T7_AIN150_NEGATIVE_CH, Kernel.T7_AIN151_NEGATIVE_CH, Kernel.T7_AIN152_NEGATIVE_CH,
+        Kernel.T7_AIN153_NEGATIVE_CH, Kernel.T7_AIN154_NEGATIVE_CH, Kernel.T7_AIN155_NEGATIVE_CH,
+        Kernel.T7_AIN156_NEGATIVE_CH, Kernel.T7_AIN157_NEGATIVE_CH, Kernel.T7_AIN158_NEGATIVE_CH,
+        Kernel.T7_AIN159_NEGATIVE_CH, Kernel.T7_AIN160_NEGATIVE_CH, Kernel.T7_AIN161_NEGATIVE_CH,
+        Kernel.T7_AIN162_NEGATIVE_CH, Kernel.T7_AIN163_NEGATIVE_CH, Kernel.T7_AIN164_NEGATIVE_CH,
+        Kernel.T7_AIN165_NEGATIVE_CH, Kernel.T7_AIN166_NEGATIVE_CH, Kernel.T7_AIN167_NEGATIVE_CH,
+        Kernel.T7_AIN168_NEGATIVE_CH, Kernel.T7_AIN169_NEGATIVE_CH, Kernel.T7_AIN170_NEGATIVE_CH,
+        Kernel.T7_AIN171_NEGATIVE_CH, Kernel.T7_AIN172_NEGATIVE_CH, Kernel.T7_AIN173_NEGATIVE_CH,
+        Kernel.T7_AIN174_NEGATIVE_CH, Kernel.T7_AIN175_NEGATIVE_CH, Kernel.T7_AIN176_NEGATIVE_CH,
+        Kernel.T7_AIN177_NEGATIVE_CH, Kernel.T7_AIN178_NEGATIVE_CH, Kernel.T7_AIN179_NEGATIVE_CH,
+        Kernel.T7_AIN180_NEGATIVE_CH, Kernel.T7_AIN181_NEGATIVE_CH, Kernel.T7_AIN182_NEGATIVE_CH,
+        Kernel.T7_AIN183_NEGATIVE_CH, Kernel.T7_AIN184_NEGATIVE_CH, Kernel.T7_AIN185_NEGATIVE_CH,
+        Kernel.T7_AIN186_NEGATIVE_CH, Kernel.T7_AIN187_NEGATIVE_CH, Kernel.T7_AIN188_NEGATIVE_CH,
+        Kernel.T7_AIN189_NEGATIVE_CH, Kernel.T7_AIN190_NEGATIVE_CH, Kernel.T7_AIN191_NEGATIVE_CH,
+        Kernel.T7_AIN192_NEGATIVE_CH, Kernel.T7_AIN193_NEGATIVE_CH, Kernel.T7_AIN194_NEGATIVE_CH,
+        Kernel.T7_AIN195_NEGATIVE_CH, Kernel.T7_AIN196_NEGATIVE_CH, Kernel.T7_AIN197_NEGATIVE_CH,
+        Kernel.T7_AIN198_NEGATIVE_CH, Kernel.T7_AIN199_NEGATIVE_CH, Kernel.T7_AIN200_NEGATIVE_CH,
+        Kernel.T7_AIN201_NEGATIVE_CH, Kernel.T7_AIN202_NEGATIVE_CH, Kernel.T7_AIN203_NEGATIVE_CH,
+        Kernel.T7_AIN204_NEGATIVE_CH, Kernel.T7_AIN205_NEGATIVE_CH, Kernel.T7_AIN206_NEGATIVE_CH,
+        Kernel.T7_AIN207_NEGATIVE_CH, Kernel.T7_AIN208_NEGATIVE_CH, Kernel.T7_AIN209_NEGATIVE_CH,
+        Kernel.T7_AIN210_NEGATIVE_CH, Kernel.T7_AIN211_NEGATIVE_CH, Kernel.T7_AIN212_NEGATIVE_CH,
+        Kernel.T7_AIN213_NEGATIVE_CH, Kernel.T7_AIN214_NEGATIVE_CH, Kernel.T7_AIN215_NEGATIVE_CH,
+        Kernel.T7_AIN216_NEGATIVE_CH, Kernel.T7_AIN217_NEGATIVE_CH, Kernel.T7_AIN218_NEGATIVE_CH,
+        Kernel.T7_AIN219_NEGATIVE_CH, Kernel.T7_AIN220_NEGATIVE_CH, Kernel.T7_AIN221_NEGATIVE_CH,
+        Kernel.T7_AIN222_NEGATIVE_CH, Kernel.T7_AIN223_NEGATIVE_CH, Kernel.T7_AIN224_NEGATIVE_CH,
+        Kernel.T7_AIN225_NEGATIVE_CH, Kernel.T7_AIN226_NEGATIVE_CH, Kernel.T7_AIN227_NEGATIVE_CH,
+        Kernel.T7_AIN228_NEGATIVE_CH, Kernel.T7_AIN229_NEGATIVE_CH, Kernel.T7_AIN230_NEGATIVE_CH,
+        Kernel.T7_AIN231_NEGATIVE_CH, Kernel.T7_AIN232_NEGATIVE_CH, Kernel.T7_AIN233_NEGATIVE_CH,
+        Kernel.T7_AIN234_NEGATIVE_CH, Kernel.T7_AIN235_NEGATIVE_CH, Kernel.T7_AIN236_NEGATIVE_CH,
+        Kernel.T7_AIN237_NEGATIVE_CH, Kernel.T7_AIN238_NEGATIVE_CH, Kernel.T7_AIN239_NEGATIVE_CH,
+        Kernel.T7_AIN240_NEGATIVE_CH, Kernel.T7_AIN241_NEGATIVE_CH, Kernel.T7_AIN242_NEGATIVE_CH,
+        Kernel.T7_AIN243_NEGATIVE_CH, Kernel.T7_AIN244_NEGATIVE_CH, Kernel.T7_AIN245_NEGATIVE_CH,
+        Kernel.T7_AIN246_NEGATIVE_CH, Kernel.T7_AIN247_NEGATIVE_CH, Kernel.T7_AIN248_NEGATIVE_CH,
+        Kernel.T7_AIN249_NEGATIVE_CH, Kernel.T7_AIN250_NEGATIVE_CH, Kernel.T7_AIN251_NEGATIVE_CH,
+        Kernel.T7_AIN252_NEGATIVE_CH, Kernel.T7_AIN253_NEGATIVE_CH, Kernel.T7_AIN254_NEGATIVE_CH,
+        Kernel.T7_AIN_ALL_NEGATIVE_CH
+    ]
+    if type(addr_list) == type([]):
+        if 0 != len(addr_list):
+            for addr in addr_list:
+                try:
+                    test = negative_ref_addr.index(addr)
+                except ValueError:
+                    if display:
+                        print("Address: " + str(addr) + " is an invalid channel address.")
+                    return -1
+            return 1
+        else:
+            return -2
+    elif isinstance(addr_list, int):
+        try:
+            test = negative_ref_addr.index(addr_list)
+        except ValueError:
+            if display:
+                print("Address: " + str(addr_list) + " is an invalid channel address.")
+            return -1
+        return 2
+    else:
+        if display:
+            print("Found " + str(type(addr_list)) + " instead of " + str(type([])) + " or " + str(int))
+        return -3
+
 """
 /**********************************************************************************************************************/
 /***************************************************ERROR FUNCTION*****************************************************/
@@ -1213,3 +1506,22 @@ def res_error(error_code, res_list):
         res_validator(res_list, 1)
     elif -2 == error_code:
         print("resolution list is empty.")
+
+
+def gnd_error(error_code, neg_list):
+    if -3 == error_code:
+        print("Invalid channel address.")
+        gnd_ref_validator(neg_list, 1)
+    elif -1 == error_code:
+        print("Invalid address value.")
+        gnd_ref_validator(neg_list, 1)
+    elif -2 == error_code:
+        print("channel list is empty.")
+
+
+def ain_index_error(error_code, range_list):
+    if -1 == error_code:
+        print("index list is empty.")
+        range_validator(range_list, 1)
+    elif -2 == error_code:
+        print("invalid type.")

@@ -4,6 +4,7 @@ import LabjackT7Lib as Kernel
 from KeyboardManager import *
 import time
 from threads import Thread
+import stream
 
 
 def monitor_dio_ain(handles, information, display_sec=1, conn_attempt=5, conn_try_sec=3):
@@ -27,6 +28,7 @@ def monitor_dio_ain(handles, information, display_sec=1, conn_attempt=5, conn_tr
                 print("FIO0: " + str(ljm.eReadAddress(handle, Kernel.T7_FIO0, Kernel.T7_FIO_T)))
                 print("FIO1: " + str(ljm.eReadAddress(handle, Kernel.T7_FIO1, Kernel.T7_FIO_T)))
             except ljm.ljm.LJMError:
+
                 index = Globals.handles.index(handle)
                 info = Globals.information[index]
                 print("Device " + str(info) + " is disconnected")
@@ -41,4 +43,3 @@ def monitor_dio_ain(handles, information, display_sec=1, conn_attempt=5, conn_tr
         if thread.is_alive():
             thread.exit(0)
     return
-
