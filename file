@@ -1,0 +1,72 @@
+Configuring system
+	Setting globals
+	Setting signals
+	Connecting to devices
+	Found 1 device(s)
+	Configuring analog input
+	Configuring analog input settling time
+	Configuring analog input resolution
+	Configuring gnd reference
+	Scanning device(s)
+
+eStreamRead from 0 to 500
+AIN0 = 0.02206 AIN2 = 3.05263 
+
+eStreamRead from 500 to 1000
+AIN0 = 0.08962 AIN2 = 1.76486 
+
+eStreamRead from 1000 to 1500
+AIN0 = 0.55350 AIN2 = -0.00736 
+
+eStreamRead from 1500 to 2000
+AIN0 = 0.58657 AIN2 = -0.00962 
+
+eStreamRead from 2000 to 2500
+AIN0 = 0.50660 AIN2 = -0.01135 
+
+eStreamRead from 2500 to 3000
+AIN0 = 0.53020 AIN2 = -0.00178 
+
+eStreamRead from 3000 to 3500
+AIN0 = 0.44458 AIN2 = -0.00809 
+
+eStreamRead from 3500 to 4000
+AIN0 = 0.39282 AIN2 = -0.00415 
+
+eStreamRead from 4000 to 4500
+AIN0 = 0.34359 AIN2 = -0.00391 
+
+eStreamRead from 4500 to 5000
+AIN0 = 0.28620 AIN2 = -0.00284 
+
+eStreamRead from 5000 to 5500
+AIN0 = 0.22443 AIN2 = -0.01080 
+
+eStreamRead from 5500 to 6000
+AIN0 = 0.22882 AIN2 = -0.00679 
+
+eStreamRead from 6000 to 6500
+AIN0 = 0.21777 AIN2 = -0.00935 
+
+eStreamRead from 6500 to 7000
+AIN0 = 0.23128 AIN2 = 1.01138 
+
+eStreamRead from 7000 to 7500
+AIN0 = 0.21991 AIN2 = 3.12452 
+
+eStreamRead from 7500 to 8000
+AIN0 = 0.20114 AIN2 = 3.57595 
+
+eStreamRead from 8000 to 8500
+AIN0 = 0.16960 AIN2 = 3.73646 
+
+eStreamRead from 8500 to 9000
+AIN0 = 0.13336 AIN2 = 3.06623 
+
+eStreamRead from 9000 to 9500
+AIN0 = 0.13557 AIN2 = 2.96420 
+
+eStreamRead from 9500 to 10000
+AIN0 = 0.14831 AIN2 = 2.53383 
+Connections closed
+Exiting
