@@ -2,8 +2,10 @@
 __author__ = 'Frederick NEY'
 from connect import *
 from config import *
-from monitor import *
-
+from Monitoring import *
+import signal
+import Sync
+import sync
 
 def main():
     """
@@ -48,7 +50,7 @@ def main():
             """
             Sync = sync.Devices(handles, 500, ["AIN0", "AIN2", "AIN4"], 3000, 1)
             """
-            Monitor.run()
+            Sync.sync()
             """
             monitor_dio_ain(handles, information)
             print("Closing connection to devices")
